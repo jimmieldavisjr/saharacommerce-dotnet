@@ -2,8 +2,8 @@
 {
     public enum UserRole
     {
-        Customer,
-        Vendor,
-        Admin
+        Customer,       // Purchases products
+        Vendor,         // Sells products
+        Admin           // Manages customer and vendor operations
     }
 }
