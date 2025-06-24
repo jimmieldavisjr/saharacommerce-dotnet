@@ -13,7 +13,7 @@ namespace Sahara.API.Models
         public required string StoreName { get; set; }
 
         [Required]
-        public required string StoreDescription { get; set; }
+        public required string Description { get; set; }
 
         // Contact information
         [Required]
