@@ -9,6 +9,9 @@
         // Accumulated reward points
         public int Points { get; set; }
 
+        // Status
+        public CustomerStatus Status{ get; set; }
+
         // Navigation property EF Core
         public User? User { get; set; }
         public ICollection<Order> Orders { get; set; } = new List<Order>();
