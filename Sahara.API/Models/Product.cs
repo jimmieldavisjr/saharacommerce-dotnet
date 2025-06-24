@@ -1,4 +1,6 @@
-﻿namespace Sahara.API.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Sahara.API.Models
 {
     public class Product
     {
@@ -8,7 +10,10 @@
         public int CategoryId { get; set; }
 
         // Product Info
+        [Required]
         public required string Name { get; set; }
+
+        [Required]
         public required string Description { get; set; }
 
         // Pricing & Stock

@@ -1,18 +1,28 @@
-﻿namespace Sahara.API.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Sahara.API.Models
 {
     public class User
     {
-        // Keys and authentification
+        // Key
         public int Id { get; set; }
+
+        // Authentification
+        [Required]
         public required string Email { get; set; }
+
+        [Required]
         public required string PasswordHash { get; set; }
 
         // Users legal name
-        public required string FirstName { get; set; }  
+        [Required]
+        public required string FirstName { get; set; }
+
+        [Required]
         public required string LastName { get; set; }
 
         // User account role
-        public required UserRole Role { get; set; }
+        public UserRole Role { get; set; }
 
         // Navigation property EF Core
         public Vendor? VendorProfile { get; set; }
