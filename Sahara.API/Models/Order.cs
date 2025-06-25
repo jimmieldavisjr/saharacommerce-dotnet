@@ -7,6 +7,7 @@ namespace Sahara.API.Models
         // Keys
         public int Id { get; set; }
         public int CustomerId { get; set; }
+        public int PaymentId { get; set; }
 
         // Order Metadata
         public DateTime CreatedAt { get; set; }
@@ -23,6 +24,7 @@ namespace Sahara.API.Models
 
         // Navigation property EF Core
         public Customer? Customer { get; set; }
+        public Payment? Payment { get; set; }
         public ICollection<OrderItem> OrderItem { get; set; } = new List<OrderItem>();
     }
 }
