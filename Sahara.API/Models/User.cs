@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 using Sahara.API.Helpers;
 
 namespace Sahara.API.Models
@@ -60,10 +61,6 @@ namespace Sahara.API.Models
         public void ChangeEmail(string newEmail)
         {
             // Validate input
-            if(string.IsNullOrWhiteSpace(newEmail))
-            {
-                throw new ArgumentException("Email address cannot be empty.", nameof(newEmail));
-            }
 
             if (!EmailValidator.IsValidEmailFormat(newEmail))
             {
@@ -75,6 +72,14 @@ namespace Sahara.API.Models
 
             // Update properties
             Email = newEmail;
+        }
+
+        // Change users currnt password
+        public void ChangePassword(string newPassword)
+        {
+            PasswordValidator.IsValidPassword(newPassword);
+
+            PasswordHash = newPassword;
         }
     }
 }
