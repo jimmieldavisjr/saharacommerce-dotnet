@@ -1,85 +1,95 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Sahara.API.Helpers;
 
 namespace Sahara.API.Models
 {
+    /// <summary>
+    /// Represents a system user account with authentication credentials and profile information.
+    /// </summary>
     public class User
     {
-        // Key
+        /// <summary>
+        /// Gets or sets the unique identifier of the user.
+        /// </summary>
         public int Id { get; set; }
 
-        // Authentification
+        /// <summary>
+        /// Gets or sets the email address used for authentication.
+        /// </summary>
         [Required]
         public required string Email { get; set; }
 
+        /// <summary>
+        /// Gets or sets the hashed password for authentication.
+        /// </summary>
         [Required]
         public required string PasswordHash { get; set; }
 
-        // Users legal name
+        /// <summary>
+        /// Gets or sets the user's legal first name.
+        /// </summary>
         [Required]
         public required string FirstName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the user's legal last name.
+        /// </summary>
         [Required]
         public required string LastName { get; set; }
 
-        // User account role
+        /// <summary>
+        /// Gets or sets the user account role.
+        /// </summary>
         public UserRole Role { get; set; }
 
-        // Navigation property EF Core
+        /// <summary>
+        /// Navigation property to the associated vendor profile if the user is a vendor.
+        /// </summary>
         public Vendor? VendorProfile { get; set; }
+
+        /// <summary>
+        /// Navigation property to the associated customer profile if the user is a customer.
+        /// </summary>
         public Customer? CustomerProfile { get; set; }
 
-
-
-
-        // Update users profile: first and last name
-        public void UpdateProfile(string firstName, string lastName)
+        /// <summary>
+        /// Changes the user's profile with the specified first and last name.
+        /// Throws if the names are empty or whitespace.
+        /// </summary>
+        /// <param name="firstName">The new first name.</param>
+        /// <param name="lastName">The new last name.</param>
+        public void ChangeProfile(string firstName, string lastName)
         {
-            // Validate input
             if (string.IsNullOrWhiteSpace(firstName))
-            {
                 throw new ArgumentException("First name cannot be empty.", nameof(firstName));
-            }
-
             if (string.IsNullOrWhiteSpace(lastName))
-            {
                 throw new ArgumentException("Last name cannot be empty.", nameof(lastName));
-            
-            }
 
-            // Sanitize input
-            firstName = firstName.Trim();
-            lastName = lastName.Trim();
-
-            // Update properties
-            FirstName = firstName;
-            LastName = lastName;
+            FirstName = firstName.Trim();
+            LastName = lastName.Trim();
         }
 
-        // Change users current email address
-        public void ChangeEmail(string newEmail)
+        /// <summary>
+        /// Changes the user's current email address.
+        /// Throws if the email is invalid.
+        /// </summary>
+        /// <param name="email">The new email address.</param>
+        public void ChangeEmail(string email)
         {
-            // Validate input
-
-            if (!EmailValidator.IsValidEmailFormat(newEmail))
-            {
-                throw new ArgumentException("Email is not in valid format.", nameof(newEmail));
-            }
-
-            // Sanitize input
-            newEmail = newEmail.Trim().ToLowerInvariant();
-
-            // Update properties
-            Email = newEmail;
+            var validatedEmail = EmailValidator.Validate(email);
+            Email = validatedEmail;
         }
 
-        // Change users currnt password
-        public void ChangePassword(string newPassword)
+        /// <summary>
+        /// Changes the user's password.
+        /// Throws if the password is invalid.
+        /// </summary>
+        /// <param name="password">The new password in plain text.</param>
+        public void ChangePassword(string password)
         {
-            PasswordValidator.IsValidPassword(newPassword);
-
-            PasswordHash = newPassword;
+            var validatedPassword = PasswordValidator.Validate(password);
+            PasswordHash = validatedPassword;
         }
     }
 }
