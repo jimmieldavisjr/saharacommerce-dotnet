@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Sahara.API.Models
+namespace Sahara.API.Entities
 {
     public class Category
     {

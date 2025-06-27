@@ -1,4 +1,4 @@
-﻿namespace Sahara.API.Models
+﻿namespace Sahara.API.Entities
 {
     public enum OrderStatus
     {

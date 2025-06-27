@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Sahara.API.Helpers;
 
-namespace Sahara.API.Models
+namespace Sahara.API.Entities
 {
     /// <summary>
     /// Represents a system user account with authentication credentials and profile information.
@@ -39,7 +39,7 @@ namespace Sahara.API.Models
         public required string LastName { get; set; }
 
         /// <summary>
-        /// Gets or sets the user account role.
+        /// Gets or sets the role defining the user's system access level.
         /// </summary>
         public UserRole Role { get; set; }
 
@@ -55,7 +55,7 @@ namespace Sahara.API.Models
 
         /// <summary>
         /// Changes the user's profile with the specified first and last name.
-        /// Throws if the names are empty or whitespace.
+        /// Throws <see cref="ArgumentException"/> if the names are empty or whitespace.
         /// </summary>
         /// <param name="firstName">The new first name.</param>
         /// <param name="lastName">The new last name.</param>

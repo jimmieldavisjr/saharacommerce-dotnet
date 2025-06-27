@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Sahara.API.Models
+namespace Sahara.API.Entities
 {
+    /// <summary>
+    /// Represents the payment details associated with an order within the system.
+    /// </summary>
     public class Payment
     {
         // Key
