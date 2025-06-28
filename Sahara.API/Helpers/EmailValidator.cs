@@ -1,5 +1,4 @@
-﻿using Sahara.API.Models;
-using System.Net.Mail;
+﻿using System.Net.Mail;
 
 namespace Sahara.API.Helpers
 {
