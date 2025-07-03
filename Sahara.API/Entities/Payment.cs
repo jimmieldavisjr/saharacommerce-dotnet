@@ -13,7 +13,7 @@ namespace Sahara.API.Entities
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the foreign key identifier of the order associated with this payment.
+        /// Gets or sets the foreign key identifier of the order associated with the payment.
         /// </summary>
         public int OrderId { get; set; }
 

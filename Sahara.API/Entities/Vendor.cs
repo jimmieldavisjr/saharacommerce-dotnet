@@ -3,7 +3,7 @@
 namespace Sahara.API.Entities
 {
     /// <summary>
-    /// Represents a system vendor account, including store information and management capabilities.
+    /// Represents the vendor account within the system.
     /// </summary>
     public class Vendor
     {
@@ -13,7 +13,7 @@ namespace Sahara.API.Entities
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the foreign key identifier linking this vendor to its associated system user account.
+        /// Gets or sets the foreign key identifier of the user associated with the vendor.
         /// </summary>
         public int UserId { get; set; }
 
@@ -42,17 +42,17 @@ namespace Sahara.API.Entities
         public required string Address { get; set; }
 
         /// <summary>
-        /// Gets or sets the current operational status of the vendor's account (e.g., Active, Suspended, Deleted, etc.).
+        /// Gets or sets the current operational status of the vendor's account.
         /// </summary>
         public VendorStatus Status { get; set; }
 
         /// <summary>
-        /// Navigation property linking this vendor to its associated user account.
+        /// Gets or sets the navigation property to the vendor's user account.
         /// </summary>
         public User? User { get; set; }
 
         /// <summary>
-        /// Navigation property representing the collection of products associated with this vendor.
+        /// Gets or sets the navigation property to the collection of products associated with the vendor.
         /// </summary>
         public ICollection<Product> Products { get; set; } = new List<Product>();
     }

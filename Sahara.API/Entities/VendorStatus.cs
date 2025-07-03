@@ -1,7 +1,7 @@
 ﻿namespace Sahara.API.Entities
 {
     /// <summary>
-    /// Represents the current operational status of a vendor within the system.
+    /// Represents the current operational status for a vendor within the system.
     /// </summary>
     public enum VendorStatus
     {

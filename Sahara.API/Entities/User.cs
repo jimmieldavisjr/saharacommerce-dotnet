@@ -5,7 +5,7 @@ using Sahara.API.Helpers;
 namespace Sahara.API.Entities
 {
     /// <summary>
-    /// Represents a system user account with authentication credentials and profile information.
+    /// Represents the user account within the system.
     /// </summary>
     public class User
     {

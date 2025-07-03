@@ -1,10 +1,28 @@
 ﻿namespace Sahara.API.Entities
 {
+    /// <summary>
+    /// Represents the current operational status of a customer within the system.
+    /// </summary>
     public enum CustomerStatus
     {
-        Active,      // Actively using the platform
-        Suspended,   // Temporarily restricted
-        Banned,      // Permanently banned
-        Deleted      // Self-deleted account (soft delete)
+        /// <summary>
+        /// The customer is active and has full access to the system.
+        /// </summary>
+        Active,
+
+        /// <summary>
+        /// The customer is temporarily suspended and cannot use the system.
+        /// </summary>
+        Suspended,
+
+        /// <summary>
+        /// The customer is permanently banned from accessing the system.
+        /// </summary>
+        Banned,
+
+        /// <summary>
+        /// The customer account has been soft-deleted; data is retained, but access is revoked.
+        /// </summary>
+        Deleted
     }
 }
