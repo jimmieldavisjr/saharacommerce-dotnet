@@ -9,6 +9,8 @@ namespace Sahara.API.Entities
     /// </summary>
     public class User
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier of the user.
         /// </summary>
@@ -53,6 +55,8 @@ namespace Sahara.API.Entities
         /// </summary>
         public Customer? CustomerProfile { get; set; }
 
+        // ──────────────── Methods ────────────────
+
         /// <summary>
         /// Changes the user's profile with the specified first and last name.
         /// Throws <see cref="ArgumentException"/> if the names are empty or whitespace.
@@ -74,7 +78,7 @@ namespace Sahara.API.Entities
         /// Changes the user's current email address.
         /// Throws if the email is invalid.
         /// </summary>
-        /// <param name="email">The new email address.</param>
+        /// <param name="email">The updated user email address.</param>
         public void ChangeEmail(string email)
         {
             var validatedEmail = EmailValidator.Validate(email);
@@ -85,7 +89,7 @@ namespace Sahara.API.Entities
         /// Changes the user's password.
         /// Throws if the password is invalid.
         /// </summary>
-        /// <param name="password">The new password in plain text.</param>
+        /// <param name="password">The updated user password.</param>
         public void ChangePassword(string password)
         {
             var validatedPassword = PasswordValidator.Validate(password);

@@ -7,6 +7,8 @@ namespace Sahara.API.Entities
     /// </summary>
     public class Product
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier of the product.
         /// </summary>
@@ -45,6 +47,11 @@ namespace Sahara.API.Entities
         public int Stock { get; set; }
 
         /// <summary>
+        /// Gets or sets the current status of the product.
+        /// </summary>
+        public ProductStatus Status{ get; set; }
+
+        /// <summary>
         /// Navigation property that references the category this product belongs to.
         /// </summary>
         public Category? Category { get; set; }
@@ -53,5 +60,38 @@ namespace Sahara.API.Entities
         /// Navigation property that references the vendor that owns this product.
         /// </summary>
         public Vendor? Vendor { get; set; }
+
+        // ──────────────── Methods ────────────────
+
+        /// <summary>
+        /// Changes the current status of the product to active.
+        /// </summary>
+        public void StatusToActive()
+        {
+            Status = ProductStatus.Active;
+        }
+
+        /// <summary>
+        /// Changes the current status of the product to draft.
+        /// </summary>
+        public void StatusToDraft()
+        {
+            Status = ProductStatus.Draft;
+        }
+
+        /// <summary>
+        /// Changes and updates the current product details.
+        /// </summary>
+        /// <param name="name">The updated product name.</param>
+        /// <param name="description">The updated product description.</param>
+        /// <param name="price">The updated product price.</param>
+        /// <param name="stock">The updated product stock.</param>
+        public void UpdateProductInformation(string name, string description, decimal price, int stock)
+        {
+            Name = name;
+            Description = description;
+            Price = price;
+            Stock = stock;
+        }
     }
 }

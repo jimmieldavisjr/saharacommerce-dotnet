@@ -7,6 +7,8 @@ namespace Sahara.API.Entities
     /// </summary>
     public class Order
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier of the order.
         /// </summary>

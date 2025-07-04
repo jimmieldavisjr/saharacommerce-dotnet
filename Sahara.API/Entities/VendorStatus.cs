@@ -18,12 +18,12 @@
         /// <summary>
         /// The vendor has temporarily closed their store, making it hidden and disabling seller operations.
         /// </summary>
-        ClosedTemporarily,
+        Closed,
 
         /// <summary>
         /// The vendor has temporarily closed their store for maintenance.
         /// </summary>
-        UnderMaintenance,
+        Maintenance,
 
         /// <summary>
         /// The vendor has been suspended by a system administrator due to a policy violation or manual intervention.

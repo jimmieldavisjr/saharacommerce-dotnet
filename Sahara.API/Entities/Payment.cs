@@ -7,6 +7,8 @@ namespace Sahara.API.Entities
     /// </summary>
     public class Payment
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier for the payment.
         /// </summary>

@@ -7,6 +7,8 @@ namespace Sahara.API.Entities
     /// </summary>
     public class Vendor
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier of the vendor.
         /// </summary>
@@ -21,7 +23,7 @@ namespace Sahara.API.Entities
         /// Gets or sets the vendor's store name.
         /// </summary>
         [Required]
-        public required string StoreName { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
         /// Gets or sets a brief description of the vendor's store.
@@ -33,7 +35,7 @@ namespace Sahara.API.Entities
         /// Gets or sets the vendor's store contact number.
         /// </summary>
         [Required]
-        public required string PhoneNumber { get; set; }
+        public required string Phone { get; set; }
         
         /// <summary>
         /// Gets or sets the vendor's store address.
@@ -55,5 +57,46 @@ namespace Sahara.API.Entities
         /// Gets or sets the navigation property to the collection of products associated with the vendor.
         /// </summary>
         public ICollection<Product> Products { get; set; } = new List<Product>();
+
+        // ──────────────── Methods ────────────────
+
+        /// <summary>
+        /// Changes the current status of the vendor to Maintenance (temporary).
+        /// </summary>
+        public void StatusToMaintenance()
+        {
+            Status = VendorStatus.Maintenance;
+        }
+
+        /// <summary>
+        /// Changes the current status of the vendor to Closed (temporarily closed).
+        /// </summary>
+        public void StatusToClosed()
+        {
+            Status = VendorStatus.Closed;
+        }
+
+        /// <summary>
+        /// Changes the current status of the vendor to Deleted (soft-deleted).
+        /// </summary>
+        public void StatusToDeleted()
+        {
+            Status = VendorStatus.Deleted;
+        }
+
+        /// <summary>
+        /// Changes and updates the current vendor details.
+        /// </summary>
+        /// <param name="name">The updated vendor name.</param>
+        /// <param name="description">The updated vendor description</param>
+        /// <param name="phone">The updated vendor phone number.</param>
+        /// <param name="address">The updated vendor business address.</param>
+        public void UpdateBusinessInformation(string name, string description, string phone, string address)
+        {
+            Name = name;
+            Description = description;
+            Phone = phone;
+            Address = address;
+        }
     }
 }

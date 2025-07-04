@@ -7,6 +7,8 @@ namespace Sahara.API.Entities
     /// </summary>
     public class Category
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier of a category.
         /// </summary>

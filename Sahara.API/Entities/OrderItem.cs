@@ -5,6 +5,8 @@
     /// </summary>
     public class OrderItem
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier for the item.
         /// </summary>

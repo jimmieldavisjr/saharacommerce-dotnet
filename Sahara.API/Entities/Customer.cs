@@ -5,6 +5,8 @@
     /// </summary>
     public class Customer
     {
+        // ──────────────── Properties ────────────────
+
         /// <summary>
         /// Gets or sets the unique identifier of the customer.
         /// </summary>
