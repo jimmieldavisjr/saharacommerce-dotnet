@@ -65,5 +65,103 @@ namespace Sahara.API.Entities
         /// Gets or sets the navigation property to the collection of items included in the order.
         /// </summary>
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
+        // ──────────────── Methods ────────────────
+
+        /// <summary>
+        /// Sets the order status to <c>Pending</c>.
+        /// </summary>
+        public void StatusToPending()
+        {
+            Status = OrderStatus.Pending;
+        }
+
+        /// <summary>
+        /// Changes the order status from <c>Pending</c> to <c>Processing</c>.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the current status is not <c>Pending</c>.
+        /// </exception>
+        public void StatusToProcessing()
+        {
+            if (Status != OrderStatus.Pending)
+            {
+                throw new InvalidOperationException("Order must be pending to set as processing.");
+            }
+
+            Status = OrderStatus.Processing;
+        }
+
+        /// <summary>
+        /// Changes the order status from <c>Processing</c> to <c>Shipped</c>.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the current status is not <c>Processing</c>.
+        /// </exception>
+        public void StatusToShipped()
+        {
+            if (Status != OrderStatus.Processing)
+            {
+                throw new InvalidOperationException("Order must be processing to set as shipped.");
+            }
+
+            Status = OrderStatus.Shipped;
+        }
+
+        /// <summary>
+        /// Changes the order status from <c>Shipped</c> to <c>Delivered</c>.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the current status is not <c>Shipped</c>.
+        /// </exception>
+        public void StatusToDelivered()
+        {
+            if (Status != OrderStatus.Shipped)
+            {
+                throw new InvalidOperationException("Order must be shipped to set as delivered.");
+            }
+
+            Status = OrderStatus.Delivered;
+        }
+
+        /// <summary>
+        /// Cancels the order if it is not <c>Delivered</c> or <c>Refunded</c>.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the current status is <c>Delivered</c> or <c>Refunded</c>.
+        /// </exception>
+        public void StatusToCancelled()
+        {
+            if (Status == OrderStatus.Delivered || Status == OrderStatus.Refunded)
+            {
+                throw new InvalidOperationException("Delivered or refunded orders cannot be cancelled.");
+            }
+
+            Status = OrderStatus.Cancelled;
+        }
+
+        /// <summary>
+        /// Changes the order status from <c>Delivered</c> to <c>Refunded</c>.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the current status is not <c>Delivered</c>.
+        /// </exception>
+        public void StatusToRefunded()
+        {
+            if (Status != OrderStatus.Delivered)
+            {
+                throw new InvalidOperationException("Order must be delivered to set as refunded.");
+            }
+
+            Status = OrderStatus.Refunded;
+        }
+
+        /// <summary>
+        /// Calculates the total amount of the order.
+        /// </summary>
+        public void CalculateTotalAmount()
+        {
+            TotalAmount = OrderItems.Sum(item => item.Quantity * item.UnitPrice);
+        }
     }
 }
