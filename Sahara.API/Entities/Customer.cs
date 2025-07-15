@@ -36,5 +36,32 @@
         /// Gets or sets the navigation property to the collection of orders associated with the customer.
         /// </summary>
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+
+        // ──────────────── Methods ────────────────
+
+        /// <summary>
+        /// Adds reward points to the customer account.
+        /// </summary>
+        /// <param name="points">Number of points to be added to customer account.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Throws exception if the the points being added is not greater than 0.</exception>
+        public void AccumulatePoints(int points)
+        {
+            if (points <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(points), "Points must be greater than 0 to be accumulated.");
+            }
+            else
+            {
+                Points += points;
+            }
+        }
+
+        /// <summary>
+        /// Changes the current status of the customer to Deleted (soft-deleted).
+        /// </summary>
+        public void StatusToDeleted()
+        {
+            Status = CustomerStatus.Deleted;
+        }
     }
 }
