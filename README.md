@@ -1,6 +1,6 @@
-# 🌍 SaharaCommerce
+# 🌍 Sahara Commerce
 
-**SaharaCommerce** is a real-world business portfolio project developed to demonstrate my evolving skills and understanding within the field of **Software Engineering**.
+**Sahara Commerce** is a real-world business portfolio project developed to demonstrate my evolving skills and understanding within the field of **Software Engineering**.
 
 This project is not only to showcase my **technical development capabilities**, but also to reflect my growing competence in **Business Analysis** and **Project Management**. The intention behind SaharaCommerce is to create a well-rounded demonstration of my ability to plan, build, and deliver software that is aligned with both user needs and business goals.
 
@@ -42,4 +42,4 @@ SaharaCommerce touches every phase of the development process:
 
 ## ✅ Summary
 
-> **SaharaCommerce** reflects my current stage of growth as a software engineer — showcasing the ability to **engineer useful, maintainable, and meaningful systems** that solve business problems while following professional development practices.
+> **Sahara Commerce** reflects my current stage of growth as a software engineer — showcasing the ability to **engineer useful, maintainable, and meaningful systems** that solve business problems while following professional development practices.
