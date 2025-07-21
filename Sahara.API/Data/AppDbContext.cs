@@ -46,14 +46,14 @@ namespace Sahara.API.Data
 
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Vendor)
-                .WithMany()
+                .WithMany(v => v.Products)
                 .HasForeignKey(p => p.VendorId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(false);
 
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Category)
-                .WithMany()
+                .WithMany(c => c.Products)
                 .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(false);
@@ -67,7 +67,7 @@ namespace Sahara.API.Data
 
             modelBuilder.Entity<OrderItem>()
                 .HasOne(oi => oi.Order)
-                .WithMany()
+                .WithMany(o => o.OrderItems)
                 .HasForeignKey(oi => oi.OrderId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(false);
@@ -81,21 +81,21 @@ namespace Sahara.API.Data
 
             modelBuilder.Entity<Vendor>()
                 .HasOne(v => v.User)
-                .WithMany()
-                .HasForeignKey(v => v.UserId)
+                .WithOne(u => u.Vendor)
+                .HasForeignKey<Vendor>(v => v.UserId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(false);
 
             modelBuilder.Entity<Customer>()
                 .HasOne(c => c.User)
-                .WithOne(c => c.CustomerProfile)
+                .WithOne(u => u.Customer)
                 .HasForeignKey<Customer>(c => c.UserId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(false);
 
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.Customer)
-                .WithMany()
+                .WithMany(c => c.Orders)
                 .HasForeignKey(o => o.CustomerId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(false);

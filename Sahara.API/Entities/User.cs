@@ -53,12 +53,12 @@ namespace Sahara.API.Entities
         /// <summary>
         /// Navigation property to the associated vendor profile if the user is a vendor.
         /// </summary>
-        public Vendor? VendorProfile { get; set; }
+        public Vendor? Vendor { get; set; }
 
         /// <summary>
         /// Navigation property to the associated customer profile if the user is a customer.
         /// </summary>
-        public Customer? CustomerProfile { get; set; }
+        public Customer? Customer { get; set; }
 
         // ──────────────── Methods ────────────────
 
