@@ -15,6 +15,11 @@ namespace Sahara.API.Entities
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the operation status of the category.
+        /// </summary>
+        public bool IsDeleted { get; set; } = false;
+
+        /// <summary>
         /// Gets or sets the name of the category.
         /// </summary>
         [Required]

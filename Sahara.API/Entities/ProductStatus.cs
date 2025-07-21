@@ -13,6 +13,6 @@
         /// <summary>
         /// Product is unpublished and hidden from customer view.
         /// </summary>
-        Draft
+        Inactive
     }
 }

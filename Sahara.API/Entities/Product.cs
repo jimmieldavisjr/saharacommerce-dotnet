@@ -17,12 +17,17 @@ namespace Sahara.API.Entities
         /// <summary>
         /// Gets or sets the foreign key identifier of the vendor associated with this product.
         /// </summary>
-        public int VendorId { get; set; }
+        public int? VendorId { get; set; }
 
         /// <summary>
         /// Gets or sets the foreign key identifier of the category associated with this product.
         /// </summary>
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the operation status of the product.
+        /// </summary>
+        public bool IsDeleted { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the name of the product.
@@ -72,11 +77,11 @@ namespace Sahara.API.Entities
         }
 
         /// <summary>
-        /// Changes the current status of the product to draft.
+        /// Changes the current status of the product to inactive.
         /// </summary>
-        public void StatusToDraft()
+        public void StatusToInactive()
         {
-            Status = ProductStatus.Draft;
+            Status = ProductStatus.Inactive;
         }
 
         /// <summary>

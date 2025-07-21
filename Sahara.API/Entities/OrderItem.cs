@@ -15,12 +15,12 @@
         /// <summary>
         /// Gets or sets the foreign key identifier of the product associated with this item.
         /// </summary>
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
 
         /// <summary>
         /// Gets or sets the foreign key identifier of the order associated with this item.
         /// </summary>
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
 
         /// <summary>
         /// Gets or sets the quantity of the product included in the order.

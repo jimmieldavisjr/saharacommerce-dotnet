@@ -15,7 +15,12 @@
         /// <summary>
         /// Gets or sets the foreign key identifier of the user associated with the customer.
         /// </summary>
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the operation status of the customer.
+        /// </summary>
+        public bool IsDeleted { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the total reward points accrued from purchases.
@@ -54,14 +59,6 @@
             {
                 Points += points;
             }
-        }
-
-        /// <summary>
-        /// Changes the current status of the customer to Deleted (soft-deleted).
-        /// </summary>
-        public void StatusToDeleted()
-        {
-            Status = CustomerStatus.Deleted;
         }
     }
 }

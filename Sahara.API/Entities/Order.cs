@@ -17,12 +17,7 @@ namespace Sahara.API.Entities
         /// <summary>
         /// Gets or sets the foreign key identifier of the customer associated with the order.
         /// </summary>
-        public int CustomerId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the foreign key identifier of the payment associated with the order.
-        /// </summary>
-        public int PaymentId { get; set; }
+        public int? CustomerId { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time when the order was created.

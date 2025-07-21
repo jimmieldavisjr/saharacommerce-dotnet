@@ -17,7 +17,12 @@ namespace Sahara.API.Entities
         /// <summary>
         /// Gets or sets the foreign key identifier of the user associated with the vendor.
         /// </summary>
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the operation status of the vendor.
+        /// </summary>
+        public bool IsDeleted { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the vendor's store name.
@@ -74,14 +79,6 @@ namespace Sahara.API.Entities
         public void StatusToClosed()
         {
             Status = VendorStatus.Closed;
-        }
-
-        /// <summary>
-        /// Changes the current status of the vendor to Deleted (soft-deleted).
-        /// </summary>
-        public void StatusToDeleted()
-        {
-            Status = VendorStatus.Deleted;
         }
 
         /// <summary>

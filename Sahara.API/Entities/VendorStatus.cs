@@ -33,11 +33,6 @@
         /// <summary>
         /// The vendor has been permanently banned by a system administrator and cannot regain access.
         /// </summary>
-        Banned,
-
-        /// <summary>
-        /// The vendor account has been soft-deleted; the data remains, but login and system access are revoked.
-        /// </summary>
-        Deleted
+        Banned
     }
 }

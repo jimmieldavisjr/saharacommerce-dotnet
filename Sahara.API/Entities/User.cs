@@ -17,6 +17,11 @@ namespace Sahara.API.Entities
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the operation status of the user.
+        /// </summary>
+        public bool IsDeleted { get; set; } = false;
+
+        /// <summary>
         /// Gets or sets the email address used for authentication.
         /// </summary>
         [Required]

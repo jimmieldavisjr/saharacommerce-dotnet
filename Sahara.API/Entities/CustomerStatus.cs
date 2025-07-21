@@ -18,11 +18,6 @@
         /// <summary>
         /// The customer is permanently banned from accessing the system.
         /// </summary>
-        Banned,
-
-        /// <summary>
-        /// The customer account has been soft-deleted; data is retained, but access is revoked.
-        /// </summary>
-        Deleted
+        Banned
     }
 }
