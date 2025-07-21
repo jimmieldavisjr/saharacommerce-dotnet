@@ -1,0 +1,102 @@
+[
+  {
+    "Id": 1,
+    "UserId": 11,
+    "IsDeleted": false,
+    "Name": "Tech Haven",
+    "Description": "Specializing in electronics and gadgets.",
+    "Phone": "555-1001",
+    "Address": "101 Silicon Ave, San Francisco, CA",
+    "Status": "Active"
+  },
+  {
+    "Id": 2,
+    "UserId": 12,
+    "IsDeleted": false,
+    "Name": "The Style Loft",
+    "Description": "Trendy fashion for men and women.",
+    "Phone": "555-1002",
+    "Address": "202 Fashion Blvd, New York, NY",
+    "Status": "Active"
+  },
+  {
+    "Id": 3,
+    "UserId": 13,
+    "IsDeleted": false,
+    "Name": "Read & Rise",
+    "Description": "Books for all ages and interests.",
+    "Phone": "555-1003",
+    "Address": "303 Book Ln, Seattle, WA",
+    "Status": "Active"
+  },
+  {
+    "Id": 4,
+    "UserId": 14,
+    "IsDeleted": false,
+    "Name": "Modern Home",
+    "Description": "Furniture and decor to upgrade your space.",
+    "Phone": "555-1004",
+    "Address": "404 Comfort St, Austin, TX",
+    "Status": "Active"
+  },
+  {
+    "Id": 5,
+    "UserId": 15,
+    "IsDeleted": false,
+    "Name": "ToyBox World",
+    "Description": "Fun and learning for children.",
+    "Phone": "555-1005",
+    "Address": "505 Joy Ave, Orlando, FL",
+    "Status": "Active"
+  },
+  {
+    "Id": 6,
+    "UserId": 16,
+    "IsDeleted": false,
+    "Name": "FitGear Co.",
+    "Description": "Fitness apparel and workout equipment.",
+    "Phone": "555-1006",
+    "Address": "606 Power Dr, Denver, CO",
+    "Status": "Active"
+  },
+  {
+    "Id": 7,
+    "UserId": 17,
+    "IsDeleted": false,
+    "Name": "Pet Planet",
+    "Description": "Everything your furry friends need.",
+    "Phone": "555-1007",
+    "Address": "707 Pet Rd, Portland, OR",
+    "Status": "Active"
+  },
+  {
+    "Id": 8,
+    "UserId": 18,
+    "IsDeleted": false,
+    "Name": "Auto Essentials",
+    "Description": "Parts, tools, and accessories for your car.",
+    "Phone": "555-1008",
+    "Address": "808 Garage St, Detroit, MI",
+    "Status": "Active"
+  },
+  {
+    "Id": 9,
+    "UserId": 19,
+    "IsDeleted": false,
+    "Name": "Craft Corner",
+    "Description": "Supplies for DIY, art, and creativity.",
+    "Phone": "555-1009",
+    "Address": "909 Maker Way, Santa Fe, NM",
+    "Status": "Active"
+  },
+  {
+    "Id": 10,
+    "UserId": 20,
+    "IsDeleted": false,
+    "Name": "Gourmet Goods",
+    "Description": "Premium pantry staples and treats.",
+    "Phone": "555-1010",
+    "Address": "1010 Taste St, Napa, CA",
+    "Status": "Active"
+  }
+]

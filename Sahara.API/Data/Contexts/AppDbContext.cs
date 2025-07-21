@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sahara.API.Entities;
 
-namespace Sahara.API.Data
+namespace Sahara.API.Data.Contexts
 {
     public class AppDbContext : DbContext
     {

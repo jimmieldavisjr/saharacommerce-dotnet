@@ -1,0 +1,9 @@
+[
+  {
+    "Id": 1,
+    "IsDeleted": false,
+    "Email": "admin@sahara.com",
+    "PasswordHash": "Adminsahara123!",
+    "CreatedAt": "2025-07-21T12:00:00Z"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "Id": 1,
+    "IsDeleted": false,
+    "Email": "michaeljohnson@gmail.com",
+    "PasswordHash": "Mj2025!!!",
+    "FirstName": "Michael",
+    "LastName": "Johnson",
+    "Role": "Customer"
+  },
+  {
+    "Id": 2,
+    "IsDeleted": false,
+    "Email": "emily.sanders@example.com",
+    "PasswordHash": "Es2025!!!",
+    "FirstName": "Emily",
+    "LastName": "Sanders",
+    "Role": "Customer"
+  },
+  {
+    "Id": 3,
+    "IsDeleted": false,
+    "Email": "daniel.wright@example.com",
+    "PasswordHash": "Dw2025!!!",
+    "FirstName": "Daniel",
+    "LastName": "Wright",
+    "Role": "Customer"
+  },
+  {
+    "Id": 4,
+    "IsDeleted": false,
+    "Email": "natalie.hughes@example.com",
+    "PasswordHash": "Nh2025!!!",
+    "FirstName": "Natalie",
+    "LastName": "Hughes",
+    "Role": "Customer"
+  },
+  {
+    "Id": 5,
+    "IsDeleted": false,
+    "Email": "brian.clark@example.com",
+    "PasswordHash": "Bc2025!!!",
+    "FirstName": "Brian",
+    "LastName": "Clark",
+    "Role": "Customer"
+  },
+  {
+    "Id": 6,
+    "IsDeleted": false,
+    "Email": "sophia.lee@example.com",
+    "PasswordHash": "Sl2025!!!",
+    "FirstName": "Sophia",
+    "LastName": "Lee",
+    "Role": "Customer"
+  },
+  {
+    "Id": 7,
+    "IsDeleted": false,
+    "Email": "aaron.morris@example.com",
+    "PasswordHash": "Am2025!!!",
+    "FirstName": "Aaron",
+    "LastName": "Morris",
+    "Role": "Customer"
+  },
+  {
+    "Id": 8,
+    "IsDeleted": false,
+    "Email": "olivia.green@example.com",
+    "PasswordHash": "Og2025!!!",
+    "FirstName": "Olivia",
+    "LastName": "Green",
+    "Role": "Customer"
+  },
+  {
+    "Id": 9,
+    "IsDeleted": false,
+    "Email": "kevin.thomas@example.com",
+    "PasswordHash": "Kt2025!!!",
+    "FirstName": "Kevin",
+    "LastName": "Thomas",
+    "Role": "Customer"
+  },
+  {
+    "Id": 10,
+    "IsDeleted": false,
+    "Email": "rachel.moore@example.com",
+    "PasswordHash": "Rm2025!!!",
+    "FirstName": "Rachel",
+    "LastName": "Moore",
+    "Role": "Customer"
+  },
+  {
+    "Id": 11,
+    "IsDeleted": false,
+    "Email": "lucas.bennett@example.com",
+    "PasswordHash": "Lb2025!!!",
+    "FirstName": "Lucas",
+    "LastName": "Bennett",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 12,
+    "IsDeleted": false,
+    "Email": "hannah.reed@example.com",
+    "PasswordHash": "Hr2025!!!",
+    "FirstName": "Hannah",
+    "LastName": "Reed",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 13,
+    "IsDeleted": false,
+    "Email": "james.evans@example.com",
+    "PasswordHash": "Je2025!!!",
+    "FirstName": "James",
+    "LastName": "Evans",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 14,
+    "IsDeleted": false,
+    "Email": "laura.hall@example.com",
+    "PasswordHash": "Lh2025!!!",
+    "FirstName": "Laura",
+    "LastName": "Hall",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 15,
+    "IsDeleted": false,
+    "Email": "ryan.bailey@example.com",
+    "PasswordHash": "Rb2025!!!",
+    "FirstName": "Ryan",
+    "LastName": "Bailey",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 16,
+    "IsDeleted": false,
+    "Email": "chloe.watson@example.com",
+    "PasswordHash": "Cw2025!!!",
+    "FirstName": "Chloe",
+    "LastName": "Watson",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 17,
+    "IsDeleted": false,
+    "Email": "ethan.griffin@example.com",
+    "PasswordHash": "Eg2025!!!",
+    "FirstName": "Ethan",
+    "LastName": "Griffin",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 18,
+    "IsDeleted": false,
+    "Email": "zoe.foster@example.com",
+    "PasswordHash": "Zf2025!!!",
+    "FirstName": "Zoe",
+    "LastName": "Foster",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 19,
+    "IsDeleted": false,
+    "Email": "jason.russell@example.com",
+    "PasswordHash": "Jr2025!!!",
+    "FirstName": "Jason",
+    "LastName": "Russell",
+    "Role": "Vendor"
+  },
+  {
+    "Id": 20,
+    "IsDeleted": false,
+    "Email": "grace.palmer@example.com",
+    "PasswordHash": "Gp2025!!!",
+    "FirstName": "Grace",
+    "LastName": "Palmer",
+    "Role": "Vendor"
+  }
+]

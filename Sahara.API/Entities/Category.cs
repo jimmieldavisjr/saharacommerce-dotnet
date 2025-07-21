@@ -26,6 +26,12 @@ namespace Sahara.API.Entities
         public required string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the description of the category.
+        /// </summary>
+        [Required]
+        public required string Description { get; set; }
+
+        /// <summary>
         /// Gets or sets the navigation property to the collection of products assigned to the category.
         /// </summary>
         public ICollection<Product> Products { get; set; } = new List<Product>();

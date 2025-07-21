@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Sahara.API.Data;
+using Sahara.API.Data.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 

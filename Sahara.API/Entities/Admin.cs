@@ -16,6 +16,11 @@ namespace Sahara.API.Entities
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the operation status of the admin account.
+        /// </summary>
+        public bool IsDeleted { get; set; } = false;
+
+        /// <summary>
         /// Gets or sets the email address for authentication.
         /// </summary>
         [Required]
@@ -26,11 +31,6 @@ namespace Sahara.API.Entities
         /// </summary>
         [Required]
         public required string PasswordHash { get; set; }
-
-        /// <summary>
-        /// Gets or sets the operation status of the admin account.
-        /// </summary>
-        public bool IsDeleted { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the date and time the admin account was created.

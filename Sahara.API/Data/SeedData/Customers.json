@@ -1,0 +1,72 @@
+[
+  {
+    "Id": 1,
+    "UserId": 1,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 2,
+    "UserId": 2,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 3,
+    "UserId": 3,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 4,
+    "UserId": 4,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 5,
+    "UserId": 5,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 6,
+    "UserId": 6,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 7,
+    "UserId": 7,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 8,
+    "UserId": 8,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 9,
+    "UserId": 9,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  },
+  {
+    "Id": 10,
+    "UserId": 10,
+    "IsDeleted": false,
+    "Points": 0,
+    "Status": "Active"
+  }
+]
