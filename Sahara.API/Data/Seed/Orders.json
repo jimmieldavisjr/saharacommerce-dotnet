@@ -1,0 +1,11 @@
+[
+  {
+    "Id": 1,
+    "CustomerId": 1,
+    "CreatedAt": "2025-07-22T12:00:00Z",
+    "Status": "Delivered",
+    "TotalAmount": 288.95,
+    "ShippingAddress": "101 Silicon Ave, San Francisco, CA",
+    "BillingAddress": "101 Silicon Ave, San Francisco, CA"
+  }
+]
