@@ -22,7 +22,7 @@ namespace Sahara.API.Data.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Query filter to exclude soft-deleted records from all queries by default checking IsDeleted property.
-
+            
             modelBuilder.Entity<User>()
                 .HasQueryFilter(u => !u.IsDeleted);
 

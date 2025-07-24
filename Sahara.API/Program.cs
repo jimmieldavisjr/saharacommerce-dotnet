@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Sahara.API.Data.Contexts;
+using Sahara.API.Data.Seed;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,14 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 
 var app = builder.Build();
 
+// Seed database
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await DbInitializer.SeedAsync(context);
+}
+
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
@@ -20,3 +30,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
