@@ -30,7 +30,7 @@
         /// <summary>
         /// Gets or sets the current operational status of the customer account.
         /// </summary>
-        public CustomerStatus Status{ get; set; }
+        public CustomerStatus Status { get; set; }
 
         /// <summary>
         /// Gets or sets the navigation property to the associated user account.

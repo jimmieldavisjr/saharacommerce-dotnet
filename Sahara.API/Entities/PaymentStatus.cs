@@ -9,7 +9,7 @@
         /// Payment was initiated but not yet completed or confirmed.
         /// </summary>
         Pending,
-        
+
         /// <summary>
         /// Payment was successfully received and confirmed.
         /// </summary>

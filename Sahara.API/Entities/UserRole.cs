@@ -9,11 +9,11 @@
         /// A customer who purchases products.
         /// </summary>
         Customer,
-        
+
         /// <summary>
         /// A vendor who sells products.
         /// </summary>
-        Vendor,         
+        Vendor,
 
         /// <summary>
         /// An administrator who manages customer and vendor account operations.

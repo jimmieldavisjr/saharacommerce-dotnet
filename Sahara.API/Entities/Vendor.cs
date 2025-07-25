@@ -41,11 +41,11 @@ namespace Sahara.API.Entities
         /// </summary>
         [Required]
         public required string Phone { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the vendor's store address.
         /// </summary>
-        [Required]        
+        [Required]
         public required string Address { get; set; }
 
         /// <summary>

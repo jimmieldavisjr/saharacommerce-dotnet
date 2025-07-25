@@ -54,7 +54,7 @@ namespace Sahara.API.Entities
         /// <summary>
         /// Gets or sets the current status of the product.
         /// </summary>
-        public ProductStatus Status{ get; set; }
+        public ProductStatus Status { get; set; }
 
         /// <summary>
         /// Navigation property that references the category this product belongs to.

@@ -23,16 +23,16 @@
         /// <summary>
         /// Order has been successfully delivered to customer.
         /// </summary>
-        Delivered,      
+        Delivered,
 
         /// <summary>
         /// Order has been canceled before shipping.
         /// </summary>
-        Cancelled,      
+        Cancelled,
 
         /// <summary>
         /// Order has been refunded after cancellation or return.
         /// </summary>
-        Refunded        
+        Refunded
     }
 }
