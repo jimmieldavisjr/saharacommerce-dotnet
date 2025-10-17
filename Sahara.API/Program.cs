@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Sahara.API.Data.Contexts;
-using Sahara.API.Data.Seed;
+using Sahara.API.Data.Seed.Initializer;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);

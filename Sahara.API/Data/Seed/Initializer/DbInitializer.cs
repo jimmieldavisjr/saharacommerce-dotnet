@@ -4,7 +4,7 @@ using Sahara.API.Entities;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Sahara.API.Data.Seed
+namespace Sahara.API.Data.Seed.Initializer
 {
     public static class DbInitializer
     {
