@@ -36,5 +36,10 @@ namespace Sahara.API.Entities
         /// Gets or sets the date and time the admin account was created.
         /// </summary>
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        /// <summary>
+        /// Gets or sets the operational status of an admin's account.
+        /// </summary>
+        public AdminStatus Status { get; set; }
     }
 }
