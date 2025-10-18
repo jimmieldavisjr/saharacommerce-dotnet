@@ -124,6 +124,10 @@ namespace Sahara.API.Data.Contexts
                 .Property(u => u.Role)
                 .HasConversion<string>();
 
+            modelBuilder.Entity<Admin>()
+                .Property(a => a.Status)
+                .HasConversion<string>();
+
             modelBuilder.Entity<Customer>()
                 .Property(c => c.Status)
                 .HasConversion<string>();
