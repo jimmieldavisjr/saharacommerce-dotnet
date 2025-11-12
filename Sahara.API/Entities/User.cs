@@ -60,6 +60,11 @@ namespace Sahara.API.Entities
         /// </summary>
         public Customer? Customer { get; set; }
 
+        /// <summary>
+        /// Navigation Property to the associated admin profile if the user is an admin.
+        /// </summary>
+        public Admin Admin { get; set; }
+
         // ──────────────── Methods ────────────────
 
         /// <summary>

@@ -22,7 +22,6 @@ namespace Sahara.API.Data.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Query filter to exclude soft-deleted records from all queries by default checking IsDeleted property.
-
             modelBuilder.Entity<User>()
                 .HasQueryFilter(u => !u.IsDeleted);
 
@@ -43,7 +42,6 @@ namespace Sahara.API.Data.Contexts
 
             // Prevents cascade delete of parent entity affecting child entities.
             // Hard-delete will not be used, data will only be soft-deleted.
-
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Vendor)
                 .WithMany(v => v.Products)
@@ -101,7 +99,6 @@ namespace Sahara.API.Data.Contexts
                 .IsRequired(false);
 
             // Decimal precision configuration.
-
             modelBuilder.Entity<Order>()
                 .Property(o => o.TotalAmount)
                 .HasPrecision(18, 2);
@@ -119,7 +116,6 @@ namespace Sahara.API.Data.Contexts
                 .HasPrecision(18, 2);
 
             // String conversion for enum int type to strings in sql.
-
             modelBuilder.Entity<User>()
                 .Property(u => u.Role)
                 .HasConversion<string>();

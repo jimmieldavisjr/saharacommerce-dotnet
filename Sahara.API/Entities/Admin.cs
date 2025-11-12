@@ -16,6 +16,11 @@ namespace Sahara.API.Entities
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the foreign key identifier of the user associated with the admin.
+        /// </summary>
+        public int UserId { get; set; }
+
+        /// <summary>
         /// Gets or sets the operation status of the admin account.
         /// </summary>
         public bool IsDeleted { get; set; } = false;
@@ -41,5 +46,10 @@ namespace Sahara.API.Entities
         /// Gets or sets the operational status of an admin's account.
         /// </summary>
         public AdminStatus Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the navigation property to the associated user account.
+        /// </summary>
+        public User User { get; set; }
     }
 }
