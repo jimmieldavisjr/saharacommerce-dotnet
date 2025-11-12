@@ -9,20 +9,21 @@ namespace Sahara.API.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {
-            // Primary key for the entity.
+            // Primary key.
             builder.HasKey(o => o.Id);
 
-            // Configures a required one-to-one relationship between Admin and User with restricted delete behavior.
+            // Entity relationship with one-to-many mapping and restricted delete behavior.
             builder.HasOne(o => o.Customer)
                 .WithMany(c => c.Orders)
                 .HasForeignKey(o => o.CustomerId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .IsRequired(true);
 
-            // Converts the 'Status' enum form default type int, to string for database storage.
-            builder.Property(o => o.Status);
+            // Converts enum type integer to string for database storage.
+            builder.Property(o => o.Status)
+                .HasConversion<string>();
 
-            // Decimal precision for database storage
+            // Decimal precision for database storage.
             builder.Property(o => o.TotalAmount)
                 .HasPrecision(18, 2);
         }

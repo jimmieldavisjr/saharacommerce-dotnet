@@ -66,6 +66,11 @@ namespace Sahara.API.Entities
         /// </summary>
         public Vendor? Vendor { get; set; }
 
+        /// <summary>
+        /// Gets or sets the navigation property to the collection of items associated with this product.
+        /// </summary>
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
         // ──────────────── Methods ────────────────
 
         /// <summary>
