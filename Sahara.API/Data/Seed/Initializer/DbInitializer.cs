@@ -14,6 +14,30 @@ namespace Sahara.API.Data.Seed.Initializer
             options.PropertyNameCaseInsensitive = true;
             options.Converters.Add(new JsonStringEnumConverter());
 
+
+            if (!context.Users.Any())
+            {
+                var json = await File.ReadAllTextAsync("Data/Seed/Users.json");
+
+                var users = JsonSerializer.Deserialize<List<User>>(json, options);
+
+                if (users != null)
+                {
+                    await context.Database.OpenConnectionAsync();
+                    await context.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT [Users] ON;");
+                    context.Users.AddRange(users);
+                    await context.SaveChangesAsync();
+                    await context.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT [Users] OFF;");
+                    await context.Database.CloseConnectionAsync();
+                    Console.WriteLine("Seeded Users");
+                }
+            }
+
+            else
+            {
+                Console.WriteLine("Users already exist");
+            }
+
             if (!context.Admins.Any())
             {
                 var json = await File.ReadAllTextAsync("Data/Seed/Admins.json");
@@ -38,28 +62,6 @@ namespace Sahara.API.Data.Seed.Initializer
             else
             {
                 Console.WriteLine("Admins already exist");
-            }
-
-            if (!context.Users.Any())
-            {
-                var json = await File.ReadAllTextAsync("Data/Seed/Users.json");
-
-                var users = JsonSerializer.Deserialize<List<User>>(json, options);
-
-                if (users != null)
-                {
-                    await context.Database.OpenConnectionAsync();
-                    await context.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT [Users] ON;");
-                    context.Users.AddRange(users);
-                    await context.SaveChangesAsync();
-                    await context.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT [Users] OFF;");
-                    await context.Database.CloseConnectionAsync();
-                    Console.WriteLine("Seeded Users");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Users already exist");
             }
 
             if (!context.Customers.Any())
