@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sahara.API.Entities;
 
-namespace Sahara.API.Data
+namespace Sahara.API.Data.Configurations
 {
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
