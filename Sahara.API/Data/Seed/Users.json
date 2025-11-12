@@ -178,5 +178,14 @@
     "FirstName": "Grace",
     "LastName": "Palmer",
     "Role": "Vendor"
+  },
+  {
+    "Id": 21,
+    "IsDeleted": false,
+    "Email": "jimmie.davis@example.com",
+    "PasswordHash": "Jd2025!!!",
+    "FirstName": "Jimmie",
+    "LastName": "Davis",
+    "Role": "Admin"
   }
 ]

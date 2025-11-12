@@ -50,7 +50,7 @@ namespace Sahara.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.Category", b =>
@@ -74,7 +74,7 @@ namespace Sahara.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.Customer", b =>
@@ -104,7 +104,7 @@ namespace Sahara.API.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.Order", b =>
@@ -141,7 +141,7 @@ namespace Sahara.API.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.OrderItem", b =>
@@ -171,7 +171,7 @@ namespace Sahara.API.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.Payment", b =>
@@ -206,7 +206,7 @@ namespace Sahara.API.Migrations
                         .IsUnique()
                         .HasFilter("[OrderId] IS NOT NULL");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.Product", b =>
@@ -251,7 +251,7 @@ namespace Sahara.API.Migrations
 
                     b.HasIndex("VendorId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.User", b =>
@@ -287,7 +287,7 @@ namespace Sahara.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.Vendor", b =>
@@ -330,7 +330,7 @@ namespace Sahara.API.Migrations
                         .IsUnique()
                         .HasFilter("[UserId] IS NOT NULL");
 
-                    b.ToTable("Vendors");
+                    b.ToTable("Vendors", (string)null);
                 });
 
             modelBuilder.Entity("Sahara.API.Entities.Customer", b =>

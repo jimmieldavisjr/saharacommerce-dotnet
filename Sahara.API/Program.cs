@@ -6,7 +6,6 @@ using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -14,7 +13,6 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 var app = builder.Build();
 
 // Seed database
-
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -22,7 +20,6 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Configure the HTTP request pipeline.
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
