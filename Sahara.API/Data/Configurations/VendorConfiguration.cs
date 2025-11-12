@@ -4,7 +4,7 @@ using Sahara.API.Entities;
 
 namespace Sahara.API.Data.Configurations
 {
-    public class VendorConfigurations : IEntityTypeConfiguration<Vendor>
+    public class VendorConfiguration : IEntityTypeConfiguration<Vendor>
     {
         public void Configure(EntityTypeBuilder<Vendor> builder)
         {
