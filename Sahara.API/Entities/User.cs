@@ -9,8 +9,6 @@ namespace Sahara.API.Entities
     /// </summary>
     public class User
     {
-        // ──────────────── Properties ────────────────
-
         /// <summary>
         /// Gets or sets the unique identifier of the user.
         /// </summary>
@@ -24,26 +22,22 @@ namespace Sahara.API.Entities
         /// <summary>
         /// Gets or sets the email address used for authentication.
         /// </summary>
-        [Required]
-        public required string Email { get; set; }
+        public string Email { get; set; } = null!;
 
         /// <summary>
         /// Gets or sets the hashed password for authentication.
         /// </summary>
-        [Required]
-        public required string PasswordHash { get; set; }
+        public string PasswordHash { get; set; } = null!;
 
         /// <summary>
         /// Gets or sets the user's legal first name.
         /// </summary>
-        [Required]
-        public required string FirstName { get; set; }
+        public string FirstName { get; set; } = null!;
 
         /// <summary>
         /// Gets or sets the user's legal last name.
         /// </summary>
-        [Required]
-        public required string LastName { get; set; }
+        public string LastName { get; set; } = null!;
 
         /// <summary>
         /// Gets or sets the role defining the user's system access level.
@@ -63,47 +57,6 @@ namespace Sahara.API.Entities
         /// <summary>
         /// Navigation Property to the associated admin profile if the user is an admin.
         /// </summary>
-        public Admin Admin { get; set; }
-
-        // ──────────────── Methods ────────────────
-
-        /// <summary>
-        /// Changes the user's profile with the specified first and last name.
-        /// Throws <see cref="ArgumentException"/> if the names are empty or whitespace.
-        /// </summary>
-        /// <param name="firstName">The new first name.</param>
-        /// <param name="lastName">The new last name.</param>
-        public void ChangeProfile(string firstName, string lastName)
-        {
-            if (string.IsNullOrWhiteSpace(firstName))
-                throw new ArgumentException("First name cannot be empty.", nameof(firstName));
-            if (string.IsNullOrWhiteSpace(lastName))
-                throw new ArgumentException("Last name cannot be empty.", nameof(lastName));
-
-            FirstName = firstName.Trim();
-            LastName = lastName.Trim();
-        }
-
-        /// <summary>
-        /// Changes the user's current email address.
-        /// Throws if the email is invalid.
-        /// </summary>
-        /// <param name="email">The updated user email address.</param>
-        public void ChangeEmail(string email)
-        {
-            var validatedEmail = EmailValidator.Validate(email);
-            Email = validatedEmail;
-        }
-
-        /// <summary>
-        /// Changes the user's password.
-        /// Throws if the password is invalid.
-        /// </summary>
-        /// <param name="password">The updated user password.</param>
-        public void ChangePassword(string password)
-        {
-            var validatedPassword = PasswordValidator.Validate(password);
-            PasswordHash = validatedPassword;
-        }
+        public Admin? Admin { get; set; }
     }
 }
