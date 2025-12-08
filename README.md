@@ -1,4 +1,4 @@
-# 🌍 Sahara Commerce
+# Sahara Commerce
 
 **Sahara Commerce** is a real-world business portfolio project developed to demonstrate my evolving skills and understanding within the field of **Software Engineering**.
 
@@ -6,26 +6,17 @@ This project is not only to showcase my **technical development capabilities**, 
 
 ---
 
-## 🚀 Purpose
-
-The purpose of this project is to document and display:
-- My technical ability in building scalable, full-stack web applications using modern .NET technologies
-- My understanding of how software solutions serve real business requirements
-- My practice of the complete **Software Development Life Cycle (SDLC)** in an applied setting
-
----
-
-## 🧠 What This Project Represents
+## What This Project Represents
 
 The SaharaCommerce project emphasizes a **holistic approach to software engineering**, combining design, development, and delivery with intentional structure. It reflects:
 
-- ✅ **Engineering growth** — through hands-on coding and architectural planning
-- ✅ **Business awareness** — building for real-world use cases and user roles
-- ✅ **Professional presentation** — with a clean repository and documentation for review by future clients or employers
+- **Engineering growth** — through hands-on coding and architectural planning
+- **Business awareness** — building for real-world use cases and user roles
+- **Professional presentation** — with a clean repository and documentation for review by future clients or employers
 
 ---
 
-## 🔁 SDLC Alignment
+## SDLC Alignment
 
 SaharaCommerce touches every phase of the development process:
 
@@ -40,6 +31,6 @@ SaharaCommerce touches every phase of the development process:
 
 ---
 
-## ✅ Summary
+## Summary
 
 > **Sahara Commerce** reflects my current stage of growth as a software engineer — showcasing the ability to **engineer useful, maintainable, and meaningful systems** that solve business problems while following professional development practices.
