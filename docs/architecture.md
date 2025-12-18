@@ -1,4 +1,4 @@
-﻿# Sahara Commerce — Architecture Overview
+﻿# Sahara Commerce — Architecture
 
 ## 1. Purpose of This Document
 This document explains the **high-level architecture** of Sahara Commerce.  
