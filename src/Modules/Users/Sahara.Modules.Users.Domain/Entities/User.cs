@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Sahara.API.Helpers;
 
-namespace Sahara.API.Entities
+namespace Sahara.Modules.Users.Domain.Entities
 {
     /// <summary>
     /// Represents the user account within the system.
