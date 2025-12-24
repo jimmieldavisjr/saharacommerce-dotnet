@@ -1,4 +1,4 @@
-﻿# Sahara Commerce — Architecture
+# Sahara Commerce — Architecture
 
 ## 1. Purpose of This Document
 This document explains the **high-level architecture** of Sahara Commerce.  
@@ -148,6 +148,68 @@ Not Allowed:
 - Domain → Infrastructure
 
 Architecture is enforced by **dependency direction**, not folder order.
+
+---
+
+## 9.1 Module Dependency Scope
+
+Each module’s dependencies **must remain specific to its own domain of usage**.
+
+This rule exists to preserve core **SOLID principles**, most critically:
+
+- **Dependency Inversion Principle (DIP)**  
+  High-level modules must not depend on low-level implementation details.
+
+- **Separation of Concerns**  
+  Each domain is responsible only for its own use cases and infrastructure needs.
+
+### Implications
+
+- Infrastructure-level dependencies (e.g., ORM providers, Identity storage, external SDKs)  
+  **must be referenced only by the Infrastructure layer of the owning module**.
+- High-level layers (Domain, Application) **must not reference implementation-specific packages**.
+- The API host references modules for composition only and does not “inherit” their infrastructure dependencies.
+
+### Rationale
+
+By scoping dependencies at the module level:
+- Architectural boundaries are enforced at **compile time**
+- Accidental coupling between domains is prevented
+- Modules remain independently evolvable and extractable
+- The modular monolith does not degrade into a shared-dependency system
+
+This rule is **mandatory** and applies to all current and future modules.
+
+---
+
+## 9.2 Composition Root & Module Self-Registration
+
+The Web API project follows the **Composition Root pattern**.
+
+More precisely, Sahara Commerce uses **Composition Root with Module Self-Registration**.
+
+This is a well-established architectural approach used in:
+- Clean Architecture
+- SOLID (especially the Dependency Inversion Principle)
+- Modular Monoliths
+- Dependency Injection–driven systems
+
+### Canonical Terms
+
+| Term | Meaning |
+|---|---|
+| **Composition Root** | A single place where the application’s object graph is composed |
+| **Module Self-Registration** | Each module owns and registers its own dependencies |
+| **Inversion of Control (IoC)** | The host does not construct dependencies itself |
+| **Dependency Injection** | Dependencies are provided to consumers, not created by them |
+
+### Responsibility Boundaries
+
+- **The Web API Host is the Composition Root**  
+  It is responsible only for application startup, middleware, and module composition.
+
+- **Modules own their wiring**  
+  Each module encapsulates its own infrastructure concerns, including persistence, providers, repositories, and optional seeding or migrations.
 
 ---
 
