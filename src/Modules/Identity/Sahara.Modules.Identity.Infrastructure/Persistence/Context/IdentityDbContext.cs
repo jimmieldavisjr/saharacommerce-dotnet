@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace Sahara.Modules.Identity.Infrastructure.Persistence.Context
@@ -43,5 +44,11 @@ namespace Sahara.Modules.Identity.Infrastructure.Persistence.Context
         // Only override or extend if custom behavior or additional Identity-owned
         // entities are required.
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

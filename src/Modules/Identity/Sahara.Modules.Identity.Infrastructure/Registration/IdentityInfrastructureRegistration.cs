@@ -12,7 +12,7 @@ namespace Sahara.Modules.Identity.Infrastructure.Registration
     {
         public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<IdentityDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("")));
+            services.AddDbContext<IdentityDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             
             return services;
         }
