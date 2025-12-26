@@ -43,7 +43,6 @@ namespace Sahara.Modules.Identity.Infrastructure.Persistence.Context
         // These tables are created and fully configured by the base IdentityDbContext.
         // Only override or extend if custom behavior or additional Identity-owned
         // entities are required.
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
