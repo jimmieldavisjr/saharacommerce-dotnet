@@ -2,17 +2,18 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Sahara.Modules.Identity.Infrastructure.Persistence.Context;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sahara.Modules.Identity.Infrastructure.Registration
+namespace Sahara.Modules.Identity.Infrastructure
 {
     public static class IdentityInfrastructureRegistration
     {
         public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<IdentityDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             
             return services;
         }

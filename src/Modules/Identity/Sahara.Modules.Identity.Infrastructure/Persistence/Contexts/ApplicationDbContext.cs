@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Sahara.Modules.Identity.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,9 +9,9 @@ using System.Text;
 
 namespace Sahara.Modules.Identity.Infrastructure.Persistence.Context
 {
-    internal sealed class IdentityDbContext : IdentityDbContext<IdentityUser<Guid>, IdentityRole<Guid>, Guid>
+    internal sealed class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
-        internal IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options) { }
+        internal ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         // ASP.NET Core Identity (EF Core) automatically adds the following DbSets/tables
         // via IdentityDbContext<TUser, TRole, TKey>. These do NOT need to be declared manually:
