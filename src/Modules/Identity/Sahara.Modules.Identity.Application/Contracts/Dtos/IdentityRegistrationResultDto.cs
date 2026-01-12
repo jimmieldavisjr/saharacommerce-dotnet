@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sahara.Modules.Identity.Application.Contracts.Dtos
 {
-    internal class RegistrationResultDto
+    internal class IdentityRegistrationResultDto
     {
     }
 }

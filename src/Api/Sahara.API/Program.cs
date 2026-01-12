@@ -1,3 +1,4 @@
+using Sahara.Modules.Identity.Application;
 using Sahara.Modules.Identity.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 // Module Registration
-builder.Services.AddIdentityInfrastructure(builder.Configuration);
+builder.Services.AddIdentityApplicationModule();
+builder.Services.AddIdentityInfrastructureModule(builder.Configuration);
 
 var app = builder.Build();
 

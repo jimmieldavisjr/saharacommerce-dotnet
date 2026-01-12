@@ -11,7 +11,7 @@ namespace Sahara.Modules.Identity.Infrastructure
 {
     public static class IdentityInfrastructureRegistration
     {
-        public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddIdentityInfrastructureModule(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             
