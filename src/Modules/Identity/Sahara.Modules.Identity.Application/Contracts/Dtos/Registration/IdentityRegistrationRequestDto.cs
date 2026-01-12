@@ -4,7 +4,5 @@ using System.Text;
 
 namespace Sahara.Modules.Identity.Application.Contracts.Dtos.Registration
 {
-    internal class IdentityRegistrationRequestDto
-    {
-    }
+    internal sealed record IdentityRegistrationRequestDto(string Email, string Password);
 }

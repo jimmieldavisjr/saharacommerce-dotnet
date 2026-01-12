@@ -24,6 +24,17 @@ namespace Sahara.Modules.Identity.Application.Services
                 Email = request.Email,
                 EmailConfirmed = false
             };
+
+            var result = await _userManager.CreateAsync(user, request.Password);
+
+            var response = new IdentityRegistrationResultDto
+            {
+                Success = result.Succeeded,
+                UserId = result.Succeeded ? user.Id : Guid.Empty,
+                Errors = result.Succeeded ? null : result.Errors.Select(e => e.Description).ToList()
+            };
+
+            return response;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Sahara.Modules.Identity.Application.Contracts.Dtos.Registration
     internal sealed class IdentityRegistrationResultDto
     {
         public bool Success { get; set; }
-        public string UserId { get; set; }
-        public List<string> Errors { get; set; } = new List<string>();
+        public Guid UserId { get; set; }
+        public List<string>? Errors { get; set; } = new List<string>();
     }
 }
