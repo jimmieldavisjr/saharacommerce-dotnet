@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
-/// Module Registration
+// Module Registration
 builder.Services.AddIdentityInfrastructure(builder.Configuration);
 
 var app = builder.Build();

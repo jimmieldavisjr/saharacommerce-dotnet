@@ -17,4 +17,4 @@ namespace Sahara.Modules.Identity.Domain.Entities
         public DateTimeOffset? DeletedAt { get; set; }
         public DateTimeOffset? DisabledAt { get; set; }
     }
-} 
+}
