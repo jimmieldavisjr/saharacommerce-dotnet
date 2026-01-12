@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Sahara.Modules.Identity.Application.Contracts.Dtos.Registration;
 using Sahara.Modules.Identity.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,16 @@ namespace Sahara.Modules.Identity.Application.Services
         public IdentityRegistrationService(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
+        }
+
+        public async Task<IdentityRegistrationResultDto> RegisterUserAsync(IdentityRegistrationRequestDto request)
+        {
+            var user = new ApplicationUser
+            {
+                UserName = request.Email,
+                Email = request.Email,
+                EmailConfirmed = false
+            };
         }
     }
 }

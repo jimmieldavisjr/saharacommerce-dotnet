@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Sahara.Modules.Identity.Application.Contracts.Dtos.Registration
 {
-    internal class IdentityRegistrationResultDto
+    internal sealed class IdentityRegistrationResultDto
     {
+        public bool Success { get; set; }
+        public string UserId { get; set; }
+        public List<string> Errors { get; set; } = new List<string>();
     }
 }
