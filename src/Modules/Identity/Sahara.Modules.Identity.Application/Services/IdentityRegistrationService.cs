@@ -16,7 +16,7 @@ namespace Sahara.Modules.Identity.Application.Services
             _userManager = userManager;
         }
 
-        public async Task<IdentityRegistrationResultDto> RegisterUserAsync(IdentityRegistrationRequestDto request)
+        public async Task<IdentityRegistrationResponseDto> RegisterUserAsync(IdentityRegistrationRequestDto request)
         {
             var user = new ApplicationUser
             {
@@ -25,16 +25,19 @@ namespace Sahara.Modules.Identity.Application.Services
                 EmailConfirmed = false
             };
 
-            var result = await _userManager.CreateAsync(user, request.Password);
+            var resultUser = await _userManager.CreateAsync(user, request.Password);
 
-            var response = new IdentityRegistrationResultDto
+            var resultRole = await _userManager.AddToRoleAsync(user, request.AccountType.ToString());
+
+            var response = new IdentityRegistrationResponseDto
             {
-                Success = result.Succeeded,
-                UserId = result.Succeeded ? user.Id : Guid.Empty,
-                Errors = result.Succeeded ? null : result.Errors.Select(e => e.Description).ToList()
+                Success = resultUser.Succeeded && resultRole.Succeeded,
+                UserId = resultUser.Succeeded ? user.Id : Guid.Empty,
+                UserErrors = resultUser.Succeeded ? null : resultUser.Errors.Select(e => e.Description).ToList(),
+                RoleErrors = resultRole.Succeeded ? null : resultRole.Errors.Select(e => e.Description).ToList()
             };
 
-            return response;
+                return response;
         }
     }
 }

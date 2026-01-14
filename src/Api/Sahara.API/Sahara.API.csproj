@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Identity\Sahara.Modules.Identity.Application\Sahara.Modules.Identity.Application.csproj" />
     <ProjectReference Include="..\..\Modules\Identity\Sahara.Modules.Identity.Infrastructure\Sahara.Modules.Identity.Infrastructure.csproj" />
   </ItemGroup>
 
