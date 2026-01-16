@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Sahara.Modules.Identity.Domain\Sahara.Modules.Identity.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\Dtos\SignIn\" />
+  </ItemGroup>
+
 </Project>
