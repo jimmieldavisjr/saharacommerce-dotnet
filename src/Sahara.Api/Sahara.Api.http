@@ -1,0 +1,6 @@
+@Sahara.Api_HostAddress = http://localhost:5161
+
+GET {{Sahara.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
