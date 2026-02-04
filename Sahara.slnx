@@ -4,9 +4,6 @@
     <Project Path="src/Sahara.App/Sahara.App.csproj" />
     <Project Path="src/Sahara.Web/Sahara.Web.csproj" />
   </Folder>
-  <Folder Name="/src/test/">
-    <File Path="TextFile1.txt" />
-  </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Sahara.Api.Tests/Sahara.Api.Tests.csproj" />
   </Folder>
