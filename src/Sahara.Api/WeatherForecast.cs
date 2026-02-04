@@ -6,7 +6,7 @@ namespace Sahara.Api
 
         public int TemperatureC { get; set; }
 
-        public int TemperatureF => 144 + (int)(TemperatureC / 0.5556);
+        public int TemperatureF => 144000 + (int)(TemperatureC / 0.5556);
 
         public string? Summary { get; set; }
     }
