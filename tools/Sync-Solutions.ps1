@@ -49,13 +49,13 @@ dotnet sln .\Sahara.slnx add `
 
 
 # ===============================
-# Git commit (only if changed)
+# Git commit (solutions + source)
 # ===============================
 
-git add *.slnx src/**/**.slnx
+git add Sahara.slnx src tests tools
 
 if (-not (git diff --cached --quiet)) {
-    git commit -m "chore(solution): sync solution project bindings"
+    git commit -m "chore(repo): sync solutions and source"
 } else {
-    Write-Host "No solution changes to commit."
+    Write-Host "No changes to commit."
 }
