@@ -1,5 +1,6 @@
 # ===============================
 # Reset solution project bindings
+# PS C:\Dev\1_Projects\Sahara> .\tools\Sync-Solutions.ps1
 # ===============================
 
 # Remove from root solution (incl tests)
