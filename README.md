@@ -1,36 +1,24 @@
-# Sahara Commerce
+# Sahara
+Sahara is an enterprise multi-vendor e-commerce platform analogous to Amazon, modeled on its marketplace dynamics. Independent sellers list products, buyers browse and purchase, and the platform orchestrates everything in between — designed for real-world production demands. Built on the secure, scalable, and high-performance Microsoft .NET ecosystem, Sahara implements ASP.NET Web API for its backend services, Blazor for the frontend framework, and .NET MAUI for mobile and desktop application versions of the product.
 
-**Sahara Commerce** is a real-world business portfolio project developed to demonstrate my evolving skills and understanding within the field of **Software Engineering**.
+## Architecture
 
-This project is not only to showcase my **technical development capabilities**, but also to reflect my growing competence in **Business Analysis** and **Project Management**. The intention behind SaharaCommerce is to create a well-rounded demonstration of my ability to plan, build, and deliver software that is aligned with both user needs and business goals.
+Sahara's backend architecture is business-driven, structured around the commerce domain so that its organization maps naturally to the business it serves. This makes the system intuitive to navigate, straightforward to scale, and resilient against the coupling and volatility that undermine critical components in poorly structured applications.
 
----
+Sahara is architected as a modular monolith, decomposed into vertically sliced modules by business capability such as Payments, Orders, Cart, and Products. Each module implements a pragmatic internal clean architecture shaped by its own domain.
 
-## What This Project Represents
+## Domain-First, Business-Driven Design
 
-The SaharaCommerce project emphasizes a **holistic approach to software engineering**, combining design, development, and delivery with intentional structure. It reflects:
+The architecture is domain-first and business-driven. Domain-first means the system's structure is modeled directly after the business capabilities required for the platform to function, each becoming its own module. Business-driven means the system is guided by real business operations: customers searching for and browsing products, sellers listing inventory, processing refunds, registering accounts. These operations reveal the critical subject areas that become modules.
 
-- **Engineering growth** — through hands-on coding and architectural planning
-- **Business awareness** — building for real-world use cases and user roles
-- **Professional presentation** — with a clean repository and documentation for review by future clients or employers
+Not every business need qualifies as a module. A component earns module status when it encapsulates business rules, invariants, lifecycle, and persisted state. Capabilities that don't meet these constraints — like sending emails — while important to the business, serve as infrastructure services that support the operational modules rather than standing on their own. Each qualifying module has its own domain, and that domain shapes the module's entire internal structure.
 
----
+## Clean Architecture Within Each Module
 
-## SDLC Alignment
+At the lowest level of the system, each qualifying module implements clean architecture internally, giving it structure and guiding principles. This architecture enforces inward dependencies with the business domain at the center, reducing coupling, enabling separation of concerns so each layer manages its own responsibility, and keeping the module and system maintainable and testable.
 
-SaharaCommerce touches every phase of the development process:
+The domain layer contains business logic with no external dependencies. The application layer coordinates application services centered around the domain. Infrastructure plugs in as a replaceable outer layer, handling data persistence and other external concerns. The API layer exposes the module's capabilities through controllers to external clients such as the web frontend or mobile application.
 
-| Phase        | Focus Description |
-|--------------|-------------------|
-| **Research**   | Understanding e-commerce workflows and multi-vendor needs |
-| **Analysis**   | Defining user types (Admin, Vendor, Customer), permissions, and workflows |
-| **Design**     | Structuring the solution as a monolithic app with future modular growth |
-| **Development**| Implementing backend (ASP.NET Core) and frontend (Blazor) features |
-| **Testing**    | Manual validation of core functionality and business logic |
-| **Delivery**   | Pushing to GitHub with potential deployment to Azure or other platforms |
+## Module Boundaries
 
----
-
-## Summary
-
-> **Sahara Commerce** reflects my current stage of growth as a software engineer — showcasing the ability to **engineer useful, maintainable, and meaningful systems** that solve business problems while following professional development practices.
+Each module owns its entire vertical responsibility and consumes shared contracts across the system for cross-cutting capabilities like sending email or file storage. No module depends on another module directly; they interact only through contracts or abstractions.
