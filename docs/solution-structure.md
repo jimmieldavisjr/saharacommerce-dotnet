@@ -1,106 +1,74 @@
-﻿Solution/
-├── Infrastructure/
-│  ├── Integrations/
-│  │  ├── Identity/
-│  │  │  ├── CurrentUser.cs
-│  │  │  ├── ClaimsMapping.cs
-│  │  │  ├── IdentityConfig.cs
-│  │  │  └── IdentityModels.cs
-│  │  │
-│  │  ├── Payments/
-│  │  │  ├── IPaymentGateway.cs          
-│  │  │  ├── PaymentGatewayResult.cs
-│  │  │  ├── StripeGateway.cs            
-│  │  │  ├── PaymentWebhookHandler.cs
-│  │  │  └── PaymentsModels.cs
-│  │  │
-│  │  └── Email/
-│  │     ├── IEmailSender.cs              
-│  │     ├── EmailMessage.cs
-│  │     ├── SmtpEmailSender.cs           
-│  │     └── EmailTemplates.cs
-│  │
-│  ├── Persistence/
-│  │  ├── AppDbContext.cs
-│  │  ├── Migrations/
-│  │  └── PersistenceConfig.cs
-│  │
-│  ├── Observability/
-│  │  ├── LoggingConfig.cs
-│  │  ├── AuditTrailWriter.cs
-│  │  └── Metrics.cs
-│  │
-│  └── BackgroundJobs/
-│     ├── JobScheduler.cs
-│     └── OutboxDispatcher.cs
+﻿src/
+├── Program.cs
+├── Extensions/
+│   ├── InfrastructureExtensions.cs
+│   └── ModuleExtensions.cs
 │
-└── Features/
-   ├── Customers/
-   │  ├── CustomersController.cs
-   │  ├── CustomersService.cs
-   │  ├── Customer.cs
-   │  └── CustomersDtos.cs
-   │
-   ├── Vendors/
-   │  ├── VendorsController.cs
-   │  ├── VendorsService.cs
-   │  ├── Vendor.cs
-   │  └── VendorsDtos.cs
-   │
-   ├── Products/
-   │  ├── ProductsController.cs
-   │  ├── ProductsService.cs
-   │  ├── Product.cs
-   │  ├── ProductImage.cs
-   │  ├── ProductStatus.cs
-   │  └── ProductsDtos.cs
-   │
-   ├── Catalog/
-   │  ├── CatalogController.cs
-   │  ├── CatalogService.cs
-   │  ├── Category.cs
-   │  └── CatalogDtos.cs
-   │
-   ├── Carts/
-   │  ├── CartsController.cs
-   │  ├── CartsService.cs
-   │  ├── Cart.cs
-   │  ├── CartItem.cs
-   │  └── CartsDtos.cs
-   │
-   ├── Checkout/
-   │  ├── CheckoutController.cs
-   │  ├── CheckoutService.cs
-   │  ├── CheckoutSession.cs
-   │  └── CheckoutDtos.cs
-   │
-   ├── Inventory/
-   │  ├── InventoryController.cs
-   │  ├── InventoryService.cs
-   │  ├── InventoryItem.cs
-   │  ├── InventoryAdjustment.cs
-   │  └── InventoryDtos.cs
-   │
-   ├── Shipping/
-   │  ├── AddressesController.cs
-   │  ├── AddressesService.cs
-   │  ├── Address.cs
-   │  ├── ShippingService.cs
-   │  ├── Shipment.cs
-   │  └── ShippingDtos.cs
-   │
-   ├── Admin/
-   │  ├── AdminVendorsController.cs
-   │  ├── AdminProductsController.cs
-   │  ├── AdminOrdersController.cs
-   │  ├── AdminService.cs
-   │  └── AdminDtos.cs
-   │
-   └── Orders/
-      ├── OrdersController.cs
-      ├── OrdersService.cs
-      ├── Order.cs
-      ├── OrderLineItem.cs
-      ├── OrderStatus.cs
-      ├── OrderHistory.cs
-      └── OrdersDtos.cs
+├── Controllers/
+│   ├── AuthController.cs
+│   └── HealthController.cs
+│
+├── Contracts/
+│   ├── Payments/
+│   ├── Email/
+│   ├── Identity/
+│   ├── FileStorage/
+│   └── AuditLog/
+│       ├── IAuditLogService.cs
+│       ├── AuditLogEntry.cs
+│       └── AuditActions.cs
+│
+├── Infrastructure/
+│   ├── Payments/
+│   ├── Email/
+│   ├── Identity/
+│   │   ├── AppUser.cs
+│   │   ├── AppIdentityDbContext.cs
+│   │   ├── TokenService.cs
+│   │   └── IdentitySeed.cs
+│   ├── FileStorage/
+│   └── AuditLog/
+│       ├── AuditLogDbContext.cs
+│       └── AuditLogService.cs
+│
+├── Common/
+│   └── Pagination/
+│       ├── PagedRequest.cs
+│       └── PagedResult.cs
+│
+└── Modules/
+    ├── Customers/
+    │   ├── Customers.Api/
+    │   ├── Customers.Domain/
+    │   ├── Customers.Application/
+    │   └── Customers.Infrastructure/
+    │
+    ├── Vendors/
+    │   ├── Vendors.Api/
+    │   ├── Vendors.Domain/
+    │   ├── Vendors.Application/
+    │   └── Vendors.Infrastructure/
+    │
+    ├── Products/
+    │   ├── Products.Api/
+    │   ├── Products.Domain/
+    │   ├── Products.Application/
+    │   └── Products.Infrastructure/
+    │
+    ├── Cart/
+    │   ├── Cart.Api/
+    │   ├── Cart.Domain/
+    │   ├── Cart.Application/
+    │   └── Cart.Infrastructure/
+    │
+    ├── Orders/
+    │   ├── Orders.Api/
+    │   ├── Orders.Domain/
+    │   ├── Orders.Application/
+    │   └── Orders.Infrastructure/
+    │
+    └── Payments/
+        ├── Payments.Api/
+        ├── Payments.Domain/
+        ├── Payments.Application/
+        └── Payments.Infrastructure/
